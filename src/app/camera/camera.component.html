@@ -1,0 +1,22 @@
+<div class="camera-container">
+    <div>
+      <button class="btn btn-primary" (click)="mostrarReporte=!mostrarReporte">Mostrar Imagen</button>
+    </div>
+    <div class="camera" *ngIf="mostrarReporte">
+      <ng-container *ngIf="webcamImage">
+        <img [src]="webcamImage.imageAsDataUrl" class="img-responsive" alt="">
+      </ng-container>
+      <webcam
+        [height]="480"
+        [width]="640"
+        [trigger]="triggerObservable"
+        (imageCapture)="handleImage($event)"
+        (initError)="handleInitError($event)">
+      </webcam>
+    </div>
+    <div *ngIf="mostrarReporte">
+      <button class="btn btn-primary" (click)="triggerSnapshot()">Tomar foto</button>
+    </div>
+   
+  </div>
+  

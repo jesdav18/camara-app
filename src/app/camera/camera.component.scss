@@ -1,0 +1,17 @@
+.camera-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .camera {
+    position: relative;
+    width: 640px;
+    height: 480px;
+  }
+  
+  .btn {
+    margin-top: 10px;
+  }
+  
